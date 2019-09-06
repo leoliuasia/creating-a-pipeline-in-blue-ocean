@@ -14,9 +14,6 @@ pipeline {
       }
     }
     stage('Test') {
-      environment {
-        CI = 'true'
-      }
       steps {
         sh './jenkins/scripts/test.sh'
       }
@@ -28,5 +25,8 @@ pipeline {
         sh './jenkins/scripts/kill.sh'
       }
     }
+  }
+  environment {
+    CI = 'true'
   }
 }
